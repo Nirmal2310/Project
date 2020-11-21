@@ -1,0 +1,6 @@
+Current techniques for separating organelle reads from nuclear reads in WGS data require full reference or partial seed
+ sequences for assembling. Current methods to extract mtDNA from WGS data require a short seed sequence to initiate assembly.
+Norgal (de Novo ORGAneLle extractor) avoids this requirement by identifying a high frequency subset of k-mers that are predominantly of mitochondrial origin and performing a de novo assembly on a subset of reads that contains these k-mers. It based on k-mer frequencies that takes advantage of mitochondria being present 10-100 times more in a cell than the nucleus.
+The mitogenome have a higher read depth compared to the nuclear genome and this difference in the read depth levels can be used to separate the reads into two groups.
+The separation of the two types of reads is done by counting occurrences of subsequences of length k in the reads - k-mers - and classifying reads that have k-mers that are found more times than the nuclear read depth as being of non-nuclear origin.
+Norgal uses raw short NGS reads from WGS data as input and outputs either a full or partial mitogenome. 
